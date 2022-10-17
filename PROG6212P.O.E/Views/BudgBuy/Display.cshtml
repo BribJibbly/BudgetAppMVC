@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PROG6212P.O.E.ViewModels.BudgBuyViewModel>
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Base.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Base.Income)
+            </th>
+            <th>
+                Property Cost
+            </th>
+            <th>
+                Total Expenses
+            </th>
+            <th>
+                Total Tax
+            </th>
+            <th>
+                Remaining Amount
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Base.UserName)
+                </td>
+                <td>
+                   R @Html.DisplayFor(modelItem => item.Base.Income)
+                </td>
+                <td>
+                   R @Html.DisplayFor(modelItem => item.Property)
+                </td>
+                <td>
+                   R @Html.DisplayFor(modelItem => item.Expense)
+                </td>
+                <td>
+                   R @Html.DisplayFor(modelItem => item.Taxes)
+                </td>
+                <td>
+                   R @Html.DisplayFor(modelItem => item.Remaining)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

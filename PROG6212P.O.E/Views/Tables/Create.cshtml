@@ -1,0 +1,155 @@
+﻿@model PROG6212P.O.E.ViewModels.Tables
+
+@{
+    ViewData["Title"] = "Create";
+}
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h1>Create</h1>
+
+<h4>Tables</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="Base" asp-action="CreateBase">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Base.UserName" class="control-label" hidden></label>
+                <input asp-for="Base.UserName" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser")" hidden>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.Income" class="control-label"></label>
+                <input asp-for="Base.Income" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.Income" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.Tax" class="control-label"></label>
+                <input asp-for="Base.Tax" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.Tax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.Groceries" class="control-label"></label>
+                <input asp-for="Base.Groceries" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.Groceries" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.WaterLights" class="control-label"></label>
+                <input asp-for="Base.WaterLights" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.WaterLights" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.Travel" class="control-label"></label>
+                <input asp-for="Base.Travel" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.Travel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.Phone" class="control-label"></label>
+                <input asp-for="Base.Phone" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base.Other" class="control-label"></label>
+                <input asp-for="Base.Other" class="form-control" value="0" required/>
+                <span asp-validation-for="Base.Other" class="text-danger"></span>
+            </div>
+        </form>
+        <form id="Rent" asp-action="CreateRent">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Rent.UserName" class="control-label" hidden></label>
+                <input asp-for="Rent.UserName" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser")" hidden>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rent.ReantAmnt" class="control-label"></label>
+                <input asp-for="Rent.ReantAmnt" class="form-control" value="0" required/>
+                <span asp-validation-for="Rent.ReantAmnt" class="text-danger"></span>
+            </div>
+        </form>
+        <form id="Vehicle" asp-action="CreateVehicle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vehicle.UserName" class="control-label" hidden></label>
+                <input asp-for="Vehicle.UserName" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser")" hidden>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.Model" class="control-label"></label>
+                <input asp-for="Vehicle.Model" class="form-control" value="no Model" required/>
+                <span asp-validation-for="Vehicle.Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.PurPrice" class="control-label"></label>
+                <input asp-for="Vehicle.PurPrice" class="form-control" value="0" required/>
+                <span asp-validation-for="Vehicle.PurPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.Deposit" class="control-label"></label>
+                <input asp-for="Vehicle.Deposit" class="form-control" value="0" required/>
+                <span asp-validation-for="Vehicle.Deposit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.Interest" class="control-label"></label>
+                <input asp-for="Vehicle.Interest" class="form-control" value="0" required/>
+                <span asp-validation-for="Vehicle.Interest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.Insurance" class="control-label"></label>
+                <input asp-for="Vehicle.Insurance" class="form-control" value="0" required/>
+                <span asp-validation-for="Vehicle.Insurance" class="text-danger"></span>
+            </div>
+        </form>
+        <form id="Buy" asp-action="CreateBuy">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Buy.UserName" class="control-label" hidden></label>
+                <input asp-for="Buy.UserName" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser")" hidden>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buy.PropPrice" class="control-label"></label>
+                <input asp-for="Buy.PropPrice" class="form-control" value="0" required/>
+                <span asp-validation-for="Buy.PropPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buy.Deposit" class="control-label"></label>
+                <input asp-for="Buy.Deposit" class="form-control" value="0" required/>
+                <span asp-validation-for="Buy.Deposit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buy.Interest" class="control-label"></label>
+                <input asp-for="Buy.Interest" class="form-control" value="0" required/>
+                <span asp-validation-for="Buy.Interest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buy.RepayMonths" class="control-label"></label>
+                <input asp-for="Buy.RepayMonths" class="form-control" value="0" required/>
+                <span asp-validation-for="Buy.RepayMonths" class="text-danger"></span>
+            </div>
+        </form>
+        <div id="divLoading" style="margin: 0px; padding: 0px; position: fixed; right: 0px;
+    top: 0px; width: 100%; height: 100%; background-color: #666666; z-index: 30001;
+    opacity: .8; filter: alpha(opacity=70);display:none">
+            <p style="position: absolute; top: 30%; left: 45%; color: White;">
+                Adding Data, please wait...
+            </p>
+        </div>
+        <script>
+            submitForms = function () {
+                $("#divLoading").show();
+                setTimeout(function () { document.getElementById("Base").submit(); }, 3000);
+                setTimeout(function () { document.getElementById("Vehicle").submit(); }, 4000);
+                setTimeout(function () { document.getElementById("Rent").submit(); }, 5000);
+                setTimeout(function () { document.getElementById("Buy").submit(); }, 6000);
+            }
+        </script>
+        <input type="button" class="btn btn-primary" value="Create" onclick="submitForms()" />
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
